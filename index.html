@@ -3,117 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Campus Lost & Found</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Internal CSS: small badge style -->
-  <style>
-    .badge {
-      display:inline-block;
-      padding:4px 10px;
-      border-radius: 999px;
-      background:#1f2937;
-      color:#93c5fd;
-      border:1px solid #334155;
-      font-size: 12px;
-      letter-spacing: .2px;
-    }
-  </style>
+  <title>Campus Lost & Found — Home</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header class="site-header">
-    <h1>🎒 Campus Lost & Found</h1>
-    <p class="subtitle">Report a lost item or list a found one</p>
-    <span class="badge">Day 2 Mini Project</span>
+<body class="theme-default">
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="brand">🎒 Lost&Found</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
-    <form id="reportForm" novalidate>
-      <div class="row two">
-        <div class="form-row">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" placeholder="e.g., A. Meera" />
-          <small class="error" id="nameError"></small>
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="e.g., meera@college.edu" />
-          <small class="error" id="emailError"></small>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="decorated">Find it. Return it. <span>Keep campus kind.</span></h1>
+        <p class="lead">Report lost or found items, and help reunite things with their owners.</p>
+        <div class="cta-row">
+          <button id="changeBg" class="btn btn-animate">Change Background</button>
+          <button id="addTip" class="btn btn-outline">Add Helpful Tip</button>
         </div>
       </div>
+    </section>
 
-      <div class="row two">
-        <div class="form-row">
-          <label for="status">I am reporting a</label>
-          <select id="status">
-            <option value="">-- Select --</option>
-            <option value="lost">Lost Item</option>
-            <option value="found">Found Item</option>
-          </select>
-          <small class="error" id="statusError"></small>
-        </div>
-
-        <div class="form-row">
-          <label for="category">Item Category</label>
-          <select id="category">
-            <option value="">-- Select Category --</option>
-            <option>Electronics</option>
-            <option>Books</option>
-            <option>Clothing</option>
-            <option>Accessories</option>
-            <option>Others</option>
-          </select>
-          <small class="error" id="categoryError"></small>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <label for="description">Item Description</label>
-        <textarea id="description" rows="3" placeholder="Color, brand, special marks…"></textarea>
-        <small class="error" id="descriptionError"></small>
-      </div>
-
-      <div class="row two">
-        <div class="form-row">
-          <label for="date">Date (Lost/Found)</label>
-          <input type="date" id="date" />
-          <small class="error" id="dateError"></small>
-        </div>
-        <div class="form-row">
-          <label for="location">Campus Location</label>
-          <input type="text" id="location" placeholder="e.g., Library, C-Block 2F" />
-          <small class="error" id="locationError"></small>
-        </div>
-      </div>
-
-      <div class="row two">
-        <div class="form-row">
-          <label for="phone">Contact Phone (optional)</label>
-          <input type="tel" id="phone" placeholder="e.g., 98765 43210" />
-          <small class="error" id="phoneError"></small>
-        </div>
-        <div class="form-row">
-          <label for="photo">Photo URL (optional)</label>
-          <input type="url" id="photo" placeholder="https://example.com/item.jpg" />
-          <small class="error" id="photoError"></small>
-        </div>
-      </div>
-
-      <div class="actions">
-        <!-- Inline CSS: button style demo -->
-        <button type="submit" style="background:#7c3aed;color:#fff;border:none;padding:12px 20px;border-radius:12px;cursor:pointer;">
-          Submit Report
-        </button>
-        <button type="reset" class="secondary">Reset</button>
-      </div>
-
-      <div class="banner" id="successBanner">Report submitted successfully 🎉</div>
-    </form>
+    <section class="cards">
+      <article class="card fade-in">
+        <h3>Report Lost Item</h3>
+        <p>Describe the item, where it was last seen, and when.</p>
+      </article>
+      <article class="card fade-in delay-1">
+        <h3>Report Found Item</h3>
+        <p>Share where you found it and how to contact you securely.</p>
+      </article>
+      <article class="card fade-in delay-2">
+        <h3>Safety & Privacy</h3>
+        <p>Only share details needed to identify the item. Meet in public areas.</p>
+      </article>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© Lost & Found • Campus Helpdesk</p>
+  <footer class="footer">
+    <p>© Campus Lost & Found • <a href="contact.html">Contact</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

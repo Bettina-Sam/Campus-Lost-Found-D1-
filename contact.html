@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Lost & Found — Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-default">
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="brand">🎒 Lost&Found</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+    <section class="contact-card">
+      <h2 class="decorated">Get in touch</h2>
+      <p class="muted">Have questions or a suggestion? Send us a message.</p>
+
+      <form id="contactForm" novalidate>
+        <div class="grid-2">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="e.g., Priya Kumar"/>
+            <small class="error" id="nameErr"></small>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="e.g., priya@college.edu"/>
+            <small class="error" id="emailErr"></small>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-row">
+            <label for="topic">Topic</label>
+            <select id="topic">
+              <option value="">-- Select --</option>
+              <option>General</option>
+              <option>Report Lost</option>
+              <option>Report Found</option>
+              <option>Feedback</option>
+            </select>
+            <small class="error" id="topicErr"></small>
+          </div>
+          <div class="form-row">
+            <label for="date">Date (optional)</label>
+            <input type="date" id="date"/>
+            <small class="error" id="dateErr"></small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Write your message..."></textarea>
+          <small class="error" id="messageErr"></small>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-animate">Send Message</button>
+          <button type="reset" class="btn btn-outline">Reset</button>
+        </div>
+        <div class="thanks" id="thanks" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© Campus Lost & Found • <a href="index.html">Home</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
