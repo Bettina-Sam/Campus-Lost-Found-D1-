@@ -1,55 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Campus Lost & Found — Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 4 — DOM + ES Modules • Pro</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-<body class="theme-default">
-  <header class="header">
+<body class="theme-dark">
+  <canvas id="fxLayer" class="fx-layer" aria-hidden="true"></canvas>
+
+  <header class="glass header">
     <nav class="nav">
-      <a href="index.html" class="brand">🎒 Lost&Found</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <ul class="nav-links">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a class="brand" href="#"><span class="logo">🎒</span> Lost&Found Pro</a>
+      <div class="nav-actions">
+        <input id="search" class="search" type="search" placeholder="Search cards ( / )" aria-label="Search cards">
+        <button id="themeToggle" class="btn icon" aria-label="Toggle theme">🌓</button>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-content">
-        <h1 class="decorated">Find it. Return it. <span>Keep campus kind.</span></h1>
-        <p class="lead">Report lost or found items, and help reunite things with their owners.</p>
-        <div class="cta-row">
-          <button id="changeBg" class="btn btn-animate">Change Background</button>
-          <button id="addTip" class="btn btn-outline">Add Helpful Tip</button>
-        </div>
+      <h1 class="shine">Found it - Return it.</h1>
+      <p class="muted">Dynamic cards • custom modal • localStorage • confetti • ES modules • keyboard shortcuts</p>
+      <div class="cta">
+        <button id="newCard" class="btn primary pulse">Create Card (N)</button>
+        <button id="addProfile" class="btn outline">Add Profile</button>
       </div>
     </section>
 
-    <section class="cards">
-      <article class="card fade-in">
-        <h3>Report Lost Item</h3>
-        <p>Describe the item, where it was last seen, and when.</p>
-      </article>
-      <article class="card fade-in delay-1">
-        <h3>Report Found Item</h3>
-        <p>Share where you found it and how to contact you securely.</p>
-      </article>
-      <article class="card fade-in delay-2">
-        <h3>Safety & Privacy</h3>
-        <p>Only share details needed to identify the item. Meet in public areas.</p>
-      </article>
+    <section class="toolbar glass">
+      <div class="tools-left">
+        <button id="shuffle" class="btn">Shuffle</button>
+        <button id="clearAll" class="btn danger">Clear All</button>
+      </div>
+      <div class="tools-right">
+        <span class="hint">Tip: Hover cards for 3D tilt • Drag to reorder</span>
+      </div>
     </section>
+
+    <section id="cardContainer" class="grid"></section>
   </main>
 
-  <footer class="footer">
-    <p>© Campus Lost & Found • <a href="contact.html">Contact</a></p>
+  <footer class="footer muted">
+    <span>ES Modules: <code>mathUtils.js</code> • <code>cardModule.js</code> • <code>toast.js</code> • <code>storage.js</code> • <code>confetti.js</code></span>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- Profile Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card glass">
+      <h2 id="modalTitle">Add Profile</h2>
+      <form id="profileForm">
+        <div class="row">
+          <label>Name</label>
+          <input id="pName" type="text" placeholder="e.g., Priya Kumar" required />
+        </div>
+        <div class="row">
+          <label>Role</label>
+          <input id="pRole" type="text" placeholder="e.g., Student Volunteer" required />
+        </div>
+        <div class="row two">
+          <div>
+            <label>Accent</label>
+            <select id="pAccent">
+              <option value="violet">Violet</option>
+              <option value="cyan">Cyan</option>
+              <option value="amber">Amber</option>
+              <option value="rose">Rose</option>
+            </select>
+          </div>
+          <div>
+            <label>Emoji</label>
+            <input id="pEmoji" type="text" maxlength="2" placeholder="🙂" />
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn primary">Create</button>
+          <button type="button" id="cancelModal" class="btn outline">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
 </body>
 </html>

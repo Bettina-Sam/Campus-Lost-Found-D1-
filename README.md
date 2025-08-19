@@ -1,11 +1,22 @@
-# Campus Lost & Found — 2-Page Mini Website (Day 3)
+# Day 4 — DOM + ES Modules (Pro Edition)
 
-This version adds advanced CSS and JavaScript with a Home and Contact page.
+Make it attractive & unique: glassmorphism, 3D tilt cards, confetti, toast messages, keyboard shortcuts, modal forms, drag & drop, search, theme toggle, and localStorage persistence.
 
-## Highlights
-- **Advanced CSS**: @keyframes animations (fade-up, pulsing button), transitions, pseudo-elements (::before/::after) for headings, CSS variables, sticky header, responsive layout via Grid/Flex.
-- **Advanced JS**: functions, arrays, loops, DOM creation (dynamic tip cards), classList toggle (theme + mobile nav), multiple event listeners, welcome alert, form validation + thank-you message.
-- **Pages**:
-  - `index.html` — hero, animated buttons, cards, theme toggle, dynamic tips
-  - `contact.html` — contact form with validation and inline thanks
-- **How to run**: open `index.html` in a browser.
+## Modules
+- `mathUtils.js` — named exports: `add`, `multiply`; default export `greet()`
+- `cardModule.js` — create/render cards, 3D tilt, drag events
+- `toast.js` — popup messages
+- `storage.js` — localStorage helpers
+- `confetti.js` — tiny canvas confetti on create
+
+## Run
+Use a local server (ES modules):
+- VS Code Live Server OR `python -m http.server` then open http://localhost:8000
+
+## Highlights (checklist for teacher)
+- DOM selection, content updates, style tweaks, dynamic element creation
+- Event listeners (click/keyboard/drag)
+- ES6 modules: named + default exports
+- Animations: sweeping heading, pulse glow, 3D hover tilt
+- Responsive CSS Grid, theme toggle, search filter
+- Persist & restore cards with localStorage
